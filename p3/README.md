@@ -1,1 +1,5 @@
+# VC
+## Tarea 1: Conteo de número de monedas y de dinero en total
+
+## Tarea 2: Conteo de número de monedas y de dinero en total
 [![](https://mermaid.ink/img/pako:eNpVjk1qw0AMha8yaJ1cwIuWEtOsCoVk1U4XYkZ2BmYkd34IwfZhcpJCc7GOk5a2Wgjpfe8JjWDEEjTQeTmaA8as9q1mVevWn5yJMvjLOWVnJKn1-k5txs-PnbCKZIWtpPv55t0sdEpuUu3rM3lP-e0vYJnU9jvK1Mff4PZ69pp88O_F5Xg5s_rHlvBjxD4Q5_rGwmAFgWJAZ-v_46JoyAcKpKGpo6UOi88aNM_ViiXL7sQGmhwLraAMFjO1DvuIAZoOfarqgPwi8rPPX9ydYGY?type=png)](https://mermaid.live/edit#pako:eNpVjk1qw0AMha8yaJ1cwIuWEtOsCoVk1U4XYkZ2BmYkd34IwfZhcpJCc7GOk5a2Wgjpfe8JjWDEEjTQeTmaA8as9q1mVevWn5yJMvjLOWVnJKn1-k5txs-PnbCKZIWtpPv55t0sdEpuUu3rM3lP-e0vYJnU9jvK1Mff4PZ69pp88O_F5Xg5s_rHlvBjxD4Q5_rGwmAFgWJAZ-v_46JoyAcKpKGpo6UOi88aNM_ViiXL7sQGmhwLraAMFjO1DvuIAZoOfarqgPwi8rPPX9ydYGY)
