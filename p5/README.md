@@ -37,6 +37,7 @@ Una vez hecho esto, se pasa la imagen a gris, y se encuentran los contornos. Y v
 ### Selección de imágenes para el entrenamiento
 
 ### División del database y entrenamiento por CPU
+yolo detect train model=yolov8n.pt data="E:\p5\dataset\paths.yml" imgsz=300 batch=4 device=CPU epochs=40
 
 ### Prueba con imágenes
 
