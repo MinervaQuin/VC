@@ -40,7 +40,7 @@ Una vez hecho esto, se pasa la imagen a gris, y se encuentran los contornos. Y v
 
 ### Prueba con imágenes
 
-
+---
 ## Incidencias
 
 En el apartado 1, en un primero momento se intentó utilizar la variables confidence para descartar objetos del tipo car que en realidad no lo fueran. Sin embargo, nos dimos cuenta rápidamente que YOLO no detecta demasiado bien ciertos coches, hasta el punto de tener que recortar la imagen para que detectara el que tuviera delante y no una parte lateral de un coche aparcado al lado como el coche principal.
