@@ -35,12 +35,14 @@ Una vez hecho esto, se pasa la imagen a gris, y se encuentran los contornos. Y v
 ## Tarea 2. Entrenamiento de un modelo de YOLOv8
 
 ### Selección de imágenes para el entrenamiento
+<!--[YOLOv7](#52-yolov7) 
+https://platesmania.com/albumlistall.php?start=9
 
 ### División del database y entrenamiento por CPU
 yolo detect train model=yolov8n.pt data="E:\p5\dataset\paths.yml" imgsz=300 batch=4 device=CPU epochs=40
 
 ### Prueba con imágenes
-
+ -->
 ---
 ## Incidencias
 
