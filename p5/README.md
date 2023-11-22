@@ -29,20 +29,39 @@ Habiendo detectado el coche, obtenemos los valores que determinan el rectángulo
         # Encontrar contornos en la imagen umbralizada
         contours, _ = cv2.findContours(threshold, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
 ```
-Una vez hecho esto, se pasa la imagen a gris, y se encuentran los contornos. Y vamos buscando por cada contorno aquellos que 
+Una vez hecho esto, se pasa la imagen a gris, y se encuentran los contornos. Y vamos buscando por cada contorno aquellos que coinciden por area > 1000 y la relación anchura por altura mayor a 3.
+
 
 ---
 ## Tarea 2. Entrenamiento de un modelo de YOLOv8
 
 ### Selección de imágenes para el entrenamiento
-<!--[YOLOv7](#52-yolov7) 
-https://platesmania.com/albumlistall.php?start=9
+Para entrenar un modelo de YOLOv8 se tiene que crear un database y repartirlo en 3 carpetas (test, val y train). A su vez estas imagenes tienen que tener un archivo txt asociado estableciendo la clase o clases (en este caso soo una clase: plate) y las coordenadas del objeto y la imagen.
+Se ha intentado elegir imágenes que dejasen seleccionar la matrícula con un rectángulo. Cuyo angulo no fuera incómodo, y no dejase demasiado del coche que no fuera una matrícula dentro del rectángulo. Osea, imágenes frontales y con poco ángulo.
+Para hallar imágenes fuimos a la página [platesmania](https://platesmania.com/albumlistall.php?start=9) y descargamos alrededor de 350 imágenes. 
+![Platesmania](https://github.com/MinervaQuin/VC/assets/100958927/61a12ccd-a43f-430c-aa72-34d9131af092)
+
+
+Para etiquetar cada imagen se ha utilizado [labelImg](https://github.com/HumanSignal/labelImg), un programa que te deja crear el txt directamente para la utilización de YOLO sin tener que modificarlo.
+
 
 ### División del database y entrenamiento por CPU
-yolo detect train model=yolov8n.pt data="E:\p5\dataset\paths.yml" imgsz=300 batch=4 device=CPU epochs=40
+Una vez terminada la selección de imágenes, y una vez clasificada entre las carpetas train, val y test, procedemos a entrenar a yolo. En este caso elegimos el modelo principal "yolov8n.pt". También le indicamos el archivo yml, en este caso llamado "path.yml" indicando los directorios de donde se carga el dataset, el número de clases, etc. se ha entrenado este modelo nuevo sólo con CPU y con los valores estándares.
 
-### Prueba con imágenes
- -->
+```
+yolo detect train model=yolov8n.pt data="E:\p5\dataset\paths.yml" imgsz=300 batch=4 device=CPU epochs=40
+```
+
+### Resultado con imágenes
+Cuando observamos los resultado después del entrenamiento, podemos ver como la curva de confianza crece exponencialmente hasta quedarse en un valor de 1 constante. El dataset no era demasiado grande y sin embargo los resultados son muy buenos. También hay que tener en cuenta que ya estamos utilizando un modelo preentrenado:
+![P_curve](https://github.com/MinervaQuin/VC/assets/100958927/40a1e07d-f53f-404a-ab2d-f4ddd9aaeda0)
+Y como observamos tiene muy buenos resultados comparando el training vs val:
+
+![train_batch1230](https://github.com/MinervaQuin/VC/assets/100958927/3de37f06-ebd6-49a3-b55c-64a466005b90)
+
+![val_batch0_labels](https://github.com/MinervaQuin/VC/assets/100958927/01a8bec0-e0e5-4be8-a33e-8caa8bed1066)
+
+
 ---
 ## Incidencias
 
